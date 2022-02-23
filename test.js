@@ -1,9 +1,10 @@
-function myFunc(...params) {
-    console.log(params);
-    console.log(...params);
-    console.log({params});
-    console.log({...params});
 
-}
+const ab = [
+    {
+        a: 1 ,
+        b:2,
+        c:3
+    }
+]
 
-myFunc(2,4,6)
+console.log(Object.values(ab) );
