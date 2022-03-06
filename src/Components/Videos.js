@@ -6,10 +6,11 @@ import Video from './Video';
 
 const Videos = () => {
     const [page, setPage] = useState(1)
+
     const { loading, error, videos, hasMore } = useVideoList(page)
 
     return (
-        <div>
+        <div> 
             {videos.length > 0 &&
                 <InfiniteScroll
                     dataLength={videos.length}
@@ -20,7 +21,10 @@ const Videos = () => {
                     {
                         videos.map(video =>
                             video.noq > 0 ? (
-                                <Link to={`/quiz/${video.youtubeID}`} key={video.youtubeID}>
+                                <Link 
+                                    to={`/quiz/${video.youtubeID}`} 
+                                    state = {{ videoTitle : video.title  }}
+                                    key={video.youtubeID}>
                                     <Video title={video.title} id={video.youtubeID} noq={video.noq} />
                                 </Link>
                             ) : (

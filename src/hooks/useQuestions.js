@@ -8,7 +8,6 @@ export default function useQuestions(videoId) {
 
     useEffect(() => {        
         async function fetchQuestions() {
-            console.log("1");
             const db = getDatabase()
             const quizRef = ref(db, "quiz/" + videoId + '/questions')
             const quizQuerey = query(

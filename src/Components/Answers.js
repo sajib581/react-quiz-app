@@ -16,7 +16,7 @@ const Answers = ({options=[], handleChange, input}) => {
                         checked={option.checked}
                         onChange={(e) => handleChange(e, index)}
                         type="checkbox"  
-                        key = {index}              
+                        key = {index + Math.random()}              
                      /> : <Checkbox 
                         className={`${classes.answer} ${
                             option.correct ? classes.correct : 
@@ -25,7 +25,7 @@ const Answers = ({options=[], handleChange, input}) => {
                         text ={option.title}
                         defaultChecked={option.checked}
                         type="checkbox"  
-                        key = {index}          
+                        key = {index + Math.random()}          
                         disabled    
                   />
                     }
